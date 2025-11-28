@@ -445,7 +445,7 @@ These features are intentionally excluded to maintain focus and meet time constr
 - **Story Visualization**: No graph/tree visualization of story branches
 - **Social Features**: No sharing, comments, ratings
 - **Analytics**: No tracking of popular choices or paths
-- **Multi-language**: English only
+- **Multi-language Content**: Only English content will be created, but architecture supports i18n (see Architecture Decision #6)
 
 ## Success Criteria
 
