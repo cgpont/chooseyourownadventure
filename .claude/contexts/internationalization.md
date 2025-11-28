@@ -25,4 +25,4 @@ All endpoints accept:
 Example: `/api/research?product=smartphone&lang=ES&market=Mexico`
 
 ## Related Contexts
-- See `architecture.md` for Redis caching and PostgreSQL architecture details
+- See `architecture.md` for Redis caching and DB architecture details

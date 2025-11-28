@@ -9,7 +9,7 @@
 ## Database Testing
 - Uses dedicated `product_research_test` database
 - RefreshDatabase trait ensures clean state between tests
-- Tests run against PostgreSQL (not SQLite) for realistic behavior
+- Tests run against MySQL (not SQLite) for realistic behavior
 - Automatic migrations and seeding before each test
 
 ## Test Requirements

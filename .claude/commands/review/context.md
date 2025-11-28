@@ -17,6 +17,5 @@
 ## Project-Specific Checks
 - Proper lang/market parameter handling
 - Redis caching with language/market-specific keys
-- PostgreSQL query optimization
 - RefreshDatabase trait in database tests
 - Conventional commit message format

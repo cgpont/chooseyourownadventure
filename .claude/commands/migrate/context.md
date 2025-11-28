@@ -19,8 +19,7 @@
 ## Database Design Principles
 - Single tables with lang/market columns (not separate tables per language)
 - Indexed by language and market for efficient querying
-- Support for PostgreSQL full-text search capabilities
 
 ## Related Contexts
 - See `../contexts/internationalization.md` for complete database design specifications
-- See `../contexts/architecture.md` for PostgreSQL and caching architecture details
+- See `../contexts/architecture.md` for DB and caching architecture details
