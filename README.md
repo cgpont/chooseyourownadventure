@@ -231,6 +231,47 @@ class AdventureResource extends JsonResource
 - Hides internal model structure
 - Conditional fields (whenLoaded prevents N+1)
 
+### 6. Internationalization (i18n) Ready Architecture
+**Why**: App launches English-only, but architected for multi-language from day one
+
+**Where**: Database schema, AI prompts, API responses
+
+**Implementation**:
+- `locale` column on translatable tables (adventures, story_nodes)
+- AI prompts include locale parameter for future multi-language generation
+- API accepts `Accept-Language` header (defaults to `en`)
+- Use Laravel's `trans()` helpers for system messages (validation, errors)
+
+**Example**:
+```php
+// Database: adventures table has locale column
+Schema::create('adventures', function (Blueprint $table) {
+    $table->uuid('uuid')->primary();
+    $table->string('locale', 5)->default('en'); // en, es, fr, etc.
+    $table->string('title');
+    $table->text('description');
+});
+
+// AI Provider: prompt includes locale
+public function generateStory(string $prompt, string $locale = 'en'): string
+{
+    // Future: switch prompt language based on locale
+    return $this->client->chat([
+        'model' => 'gpt-4',
+        'messages' => [
+            ['role' => 'system', 'content' => "Generate story in {$locale}"],
+        ],
+    ]);
+}
+```
+
+**Interview Points**:
+- Forward-thinking architecture (build it right from start)
+- Minimal cost now, huge savings later (no migrations to add locale)
+- Database normalized for translations (one row per language)
+- AI providers can generate content in any language
+- **Launch fast (English only), scale globally (i18n ready)**
+
 ## Database Design
 
 ### Schema Overview
